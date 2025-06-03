@@ -24,6 +24,7 @@ Uses
 
 // Hide text
 Procedure ENameEnter(EName: TEdit; Text: String);
+// Text - hide this text
 Begin
   If EName.Text = Text then
   Begin
@@ -34,6 +35,7 @@ End;
 
 // Show text
 Procedure ENameExit(EName: TEdit; Text: String);
+// Text - show this text
 Begin
   If EName.Text = '' then
   Begin
@@ -98,7 +100,7 @@ Begin
   // If map is too small
   If (MapH < 3) or (MapW < 3) then
   Begin
-    ShowMessage('Ширина и высота должна быть больше 2 ячеек');
+    ShowMessage('ГГЁГ°ГЁГ­Г  ГЁ ГўГ»Г±Г®ГІГ  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЎГ®Г«ГјГёГҐ 2 ГїГ·ГҐГҐГЄ');
     Result := False;
   End;
 End;
@@ -176,14 +178,14 @@ begin
   // If map is too small
   If (MapH < 3) or (MapW < 3) then
   Begin
-    ShowMessage('Ширина и высота должна быть больше 2 ячеек');
+    ShowMessage('ГГЁГ°ГЁГ­Г  ГЁ ГўГ»Г±Г®ГІГ  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЎГ®Г«ГјГёГҐ 2 ГїГ·ГҐГҐГЄ');
     Result := True;
   End;
 
   // Map is not founded
   If Counter = 1000 then
   Begin
-    ShowMessage('Лабиринт не найден');
+    ShowMessage('Г‹Г ГЎГЁГ°ГЁГ­ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­');
     Result := True;
   End;
 end;
@@ -223,7 +225,7 @@ Begin
     If HError > 0 then
       FProgramRun.EMazeHeight.Font.Color := clRed;
 
-    ShowMessage('Введите (высоту > 2) и (ширину > 2) лабиринта перед генерацией');
+    ShowMessage('Г‚ГўГҐГ¤ГЁГІГҐ (ГўГ»Г±Г®ГІГі > 2) ГЁ (ГёГЁГ°ГЁГ­Гі > 2) Г«Г ГЎГЁГ°ГЁГ­ГІГ  ГЇГҐГ°ГҐГ¤ ГЈГҐГ­ГҐГ°Г Г¶ГЁГҐГ©');
   End
   Else
   Begin
@@ -339,7 +341,7 @@ Var
  tmEnd - end time counter
 }
 Begin
-  // BFS алгоритм
+  // BFS Г Г«ГЈГ®Г°ГЁГІГ¬
   tmStart := GetTickCount;
   CanBeSolved := BFSAlgorithm(ThisMap, MazeStart.X, MazeStart.Y, MazeEnd.X, MazeEnd.Y, MapH, MapW);
   tmEnd := GetTickCount;
@@ -349,14 +351,14 @@ Begin
     FProgramRun.MSpeedTest.Clear;
     FProgramRun.MSpeedTest.Lines.Add('BFS: ' + IntToStr(tmEnd - tmStart) + ' ms');
 
-    // A* алгоритм
+    // A* Г Г«ГЈГ®Г°ГЁГІГ¬
     tmStart := GetTickCount;
     AStarAlgorithm(ThisMap, MazeStart.X, MazeStart.Y, MazeEnd.X, MazeEnd.Y, MapH, MapW);
     tmEnd := GetTickCount;
 
     FProgramRun.MSpeedTest.Lines.Add('A*: ' + IntToStr(tmEnd - tmStart) + ' ms');
 
-    // DFS алгоритм
+    // DFS Г Г«ГЈГ®Г°ГЁГІГ¬
     tmStart := GetTickCount;
     DFSAlgorithm(ThisMap, MazeStart.X, MazeStart.Y, MazeEnd.X, MazeEnd.Y, MapH, MapW);
     tmEnd := GetTickCount;
