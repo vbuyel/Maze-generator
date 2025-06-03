@@ -75,7 +75,7 @@ implementation
 
 // Used units and libraries
 Uses
-  Main, uShowMaze, ComObj, MyProcedures, SharedData, uPrim;
+  uMain, uShowMaze, ComObj, uMyProcedures, uSharedData, uPrim;
 
 // Open file
 Procedure TFProgramRun.actFileOpenExecute(Sender: TObject);
@@ -121,7 +121,7 @@ begin
       Else
       Begin
         MyExcel := Unassigned;
-        ShowMessage('Файл не найден');
+        ShowMessage('Г”Г Г©Г« Г­ГҐ Г­Г Г©Г¤ГҐГ­');
         Errors := True;
       end;
     End
@@ -180,7 +180,7 @@ begin
       End
       Else
       Begin
-        ShowMessage('Файл не найден');
+        ShowMessage('Г”Г Г©Г« Г­ГҐ Г­Г Г©Г¤ГҐГ­');
         Errors := True;
       End;
     End;
@@ -211,14 +211,14 @@ begin
 
     // Checking
     If (MazeStart.X = 0) and (MazeStart.Y = 0) then
-      ShowMessage('Требуется символ "S" - start (начало) на карте');
+      ShowMessage('Г’Г°ГҐГЎГіГҐГІГ±Гї Г±ГЁГ¬ГўГ®Г« "S" - start (Г­Г Г·Г Г«Г®) Г­Г  ГЄГ Г°ГІГҐ');
 
     If (MazeEnd.X = MapHeight-1) and (MazeEnd.Y = MapWidth-1) then
-      ShowMessage('Требуется символ "E" - end (конец) на карте');
+      ShowMessage('Г’Г°ГҐГЎГіГҐГІГ±Гї Г±ГЁГ¬ГўГ®Г« "E" - end (ГЄГ®Г­ГҐГ¶) Г­Г  ГЄГ Г°ГІГҐ');
 
     If (LowerCase(Map[MazeStart.X][MazeStart.Y]) = 'x')
       or (LowerCase(Map[MazeEnd.X][MazeEnd.Y]) = 'x') then
-      ShowMessage('Убедитесь, что такой лабиринт можно решить');
+      ShowMessage('Г“ГЎГҐГ¤ГЁГІГҐГ±Гј, Г·ГІГ® ГІГ ГЄГ®Г© Г«Г ГЎГЁГ°ГЁГ­ГІ Г¬Г®Г¦Г­Г® Г°ГҐГёГЁГІГј');
 
     // Set form's size
     SizeCoef := (612*612) div (MapHeight*MapWidth);
@@ -340,14 +340,14 @@ Begin
 
     // Checking
     If (MazeStart.X = 0) and (MazeStart.Y = 0) then
-      ShowMessage('Требуется символ "S" - start (начало) на карте');
+      ShowMessage('Г’Г°ГҐГЎГіГҐГІГ±Гї Г±ГЁГ¬ГўГ®Г« "S" - start (Г­Г Г·Г Г«Г®) Г­Г  ГЄГ Г°ГІГҐ');
 
     If (MazeEnd.X = MapHeight-1) and (MazeEnd.Y = MapWidth-1) then
-      ShowMessage('Требуется символ "E" - end (конец) на карте');
+      ShowMessage('Г’Г°ГҐГЎГіГҐГІГ±Гї Г±ГЁГ¬ГўГ®Г« "E" - end (ГЄГ®Г­ГҐГ¶) Г­Г  ГЄГ Г°ГІГҐ');
 
     If (LowerCase(Map[MazeStart.X][MazeStart.Y]) = 'x')
       or (LowerCase(Map[MazeEnd.X][MazeEnd.Y]) = 'x') then
-        ShowMessage('Убедитесь, что такой лабиринт можно решить');
+        ShowMessage('Г“ГЎГҐГ¤ГЁГІГҐГ±Гј, Г·ГІГ® ГІГ ГЄГ®Г© Г«Г ГЎГЁГ°ГЁГ­ГІ Г¬Г®Г¦Г­Г® Г°ГҐГёГЁГІГј');
   End;
 End;
 
@@ -391,14 +391,14 @@ end;
 procedure TFProgramRun.EMazeHeightEnter(Sender: TObject);
 // Sender - activated object
 begin
-  ENameEnter(EMazeHeight, 'от 3 до 100');
+  ENameEnter(EMazeHeight, 'Г®ГІ 3 Г¤Г® 100');
 end;
 
 // Show maze size parameter (height)
 Procedure TFProgramRun.EMazeHeightExit(Sender: TObject);
 // Sender - activated object
 Begin
-  ENameExit(EMazeHeight, 'от 3 до 100');
+  ENameExit(EMazeHeight, 'Г®ГІ 3 Г¤Г® 100');
 End;
 
 // On change maze size
@@ -436,14 +436,14 @@ End;
 Procedure TFProgramRun.EMazeWidthEnter(Sender: TObject);
 // Sender - activated object
 Begin
-  ENameEnter(EMazeWidth, 'от 3 до 100');
+  ENameEnter(EMazeWidth, 'Г®ГІ 3 Г¤Г® 100');
 End;
 
 // Show maze size parameter (width)
 Procedure TFProgramRun.EMazeWidthExit(Sender: TObject);
 // Sender - activated object
 Begin
-  ENameExit(EMazeWidth, 'от 3 до 100');
+  ENameExit(EMazeWidth, 'Г®ГІ 3 Г¤Г® 100');
 End;
 
 // On close
