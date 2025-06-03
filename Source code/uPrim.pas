@@ -53,7 +53,6 @@ Procedure PrimAlgorithm(var ThisMap: TMap; var ThisWay: TAlgorArray; MapH, MapW:
  MapH, MapW - map size
 }
 Var
-  Queue: PQueue;
   PointTemp: TPoint;
   PointsArray: Array of PPoint;
   MapPrim: Array of Array of Byte;
@@ -61,7 +60,6 @@ Var
   i, j: integer;
   TempWay: Integer;
 {
- Queue - queue
  PointTemp - time point
  PointsArray - array of points
  MapPrim - local array of initialisation
